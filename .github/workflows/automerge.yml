@@ -12,7 +12,6 @@ jobs:
       - uses: actions/checkout@v3
       - name: Auto Merge
         run: |
+          git checkout $GITHUB_HEAD_REF
           git merge $GITHUB_SHA -m "Merge $GITHUB_BASE_REF branch into $GITHUB_HEAD_REF by GitHub Actions"
-          git branch
-          git log
-          git push origin $GITHUB_BASE_REF:$GITHUB_HEAD_REF
+          git push origin $GITHUB_HEAD_REF
