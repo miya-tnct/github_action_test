@@ -1,10 +1,6 @@
 name: Docker Release
-run-name: ${{ github.event.pull_request.title }}:${{ github.sha }}
-on:
-  pull_request:
-    branches:
-      - main
-    types: [closed]
+run-name: ${{ github.ref_name }}:${{ github.sha }}
+on: push
 jobs:
   build:
     runs-on: ubuntu-22.04
