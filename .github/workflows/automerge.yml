@@ -1,4 +1,4 @@
-name: Test On Push
+name: Auto Merge
 run-name: ${{ github.sha }}
 on: pull_request
   types: [closed]
