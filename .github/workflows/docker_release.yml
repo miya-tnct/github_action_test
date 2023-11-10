@@ -25,3 +25,13 @@ jobs:
         run: |
           docker push ghcr.io/$GITHUB_ACTOR/${GITHUB_REPOSITORY#${GITHUB_REPOSITORY_OWNER}/}:latest
           docker push ghcr.io/$GITHUB_ACTOR/${GITHUB_REPOSITORY#${GITHUB_REPOSITORY_OWNER}/}:$(echo $GITHUB_SHA | head -c8)
+  release_test_1:
+    if: github.repository == kiksworks/kiks_tools
+    runs-on: ubuntu-22.04
+    steps:
+      - run: echo release_test_1
+  release_test_2:
+    if: github.repository == miya-tnct/github_action_test
+    runs-on: ubuntu-22.04
+    steps:
+      - run: echo release_test_2
