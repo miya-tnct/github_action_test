@@ -1,0 +1,13 @@
+name: docker build
+run-name: ${{ github.event.pull_request.title }}:${{ github.sha }}
+on: pull_request
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Build Docker Image
+        run: |
+          docker build \
+          -t ghcr.io/$GITHUB_ACTOR/${GITHUB_REPOSITORY#${GITHUB_REPOSITORY_OWNER}/}:latest \
+          -t ghcr.io/$GITHUB_ACTOR/${GITHUB_REPOSITORY#${GITHUB_REPOSITORY_OWNER}/}:$GITHUB_SHA \
+          -f .docker/DockerFile \
