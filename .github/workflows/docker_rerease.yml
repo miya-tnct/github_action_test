@@ -22,10 +22,10 @@ jobs:
         run: |
           docker build \
           -t ghcr.io/$GITHUB_ACTOR/${GITHUB_REPOSITORY#${GITHUB_REPOSITORY_OWNER}/}:latest \
-          -t ghcr.io/$GITHUB_ACTOR/${GITHUB_REPOSITORY#${GITHUB_REPOSITORY_OWNER}/}:$GITHUB_SHA \
+          -t ghcr.io/$GITHUB_ACTOR/${GITHUB_REPOSITORY#${GITHUB_REPOSITORY_OWNER}/}:$(echo $GITHUB_SHA | head -c8) \
           -f .docker/DockerFile \
           .
       - name: Push Docker Image
         run: |
           docker push ghcr.io/$GITHUB_ACTOR/${GITHUB_REPOSITORY#${GITHUB_REPOSITORY_OWNER}/}:latest
-          docker push ghcr.io/$GITHUB_ACTOR/${GITHUB_REPOSITORY#${GITHUB_REPOSITORY_OWNER}/}:$GITHUB_SHA
+          docker push ghcr.io/$GITHUB_ACTOR/${GITHUB_REPOSITORY#${GITHUB_REPOSITORY_OWNER}/}:$(echo $GITHUB_SHA | head -c8)
