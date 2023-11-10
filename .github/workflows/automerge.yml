@@ -1,0 +1,14 @@
+name: Test On Push
+run-name: ${{ github.sha }}
+on: pull_request
+  types: [closed]
+jobs:
+  test:
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+        git merge $GITHUB_SHA -m "Merge $GITHUB_BASE_REF branch into $GITHUB_HEAD_REF by GitHub Actions"
+        git push
