@@ -1,0 +1,8 @@
+name: Test
+run-name: test
+on: [push]
+jobs:
+  Jobs1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hoge
