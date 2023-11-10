@@ -1,0 +1,8 @@
+name: Test On Merge Group
+run-name: ${{ github.sha }}
+on: merge_group
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - run: echo $GITHUB_REF_NAME

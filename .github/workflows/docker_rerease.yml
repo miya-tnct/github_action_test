@@ -23,7 +23,7 @@ jobs:
           docker build \
           -t ghcr.io/$GITHUB_ACTOR/${GITHUB_REPOSITORY#${GITHUB_REPOSITORY_OWNER}/}:latest \
           -t ghcr.io/$GITHUB_ACTOR/${GITHUB_REPOSITORY#${GITHUB_REPOSITORY_OWNER}/}:$(echo $GITHUB_SHA | head -c8) \
-          -f .docker/DockerFile \
+          -f .docker/Dockerfile \
           .
       - name: Push Docker Image
         run: |

@@ -11,5 +11,5 @@ jobs:
           docker build \
           -t ghcr.io/$GITHUB_ACTOR/${GITHUB_REPOSITORY#${GITHUB_REPOSITORY_OWNER}/}:latest \
           -t ghcr.io/$GITHUB_ACTOR/${GITHUB_REPOSITORY#${GITHUB_REPOSITORY_OWNER}/}:$GITHUB_SHA \
-          -f .docker/DockerFile \
+          -f .docker/Dockerfile \
           .
