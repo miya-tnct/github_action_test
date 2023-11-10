@@ -1,7 +1,8 @@
 name: Auto Merge
 run-name: ${{ github.sha }}
-on: pull_request
-  types: [closed]
+on: 
+  pull_request:
+    types: [closed]
 jobs:
   test:
     runs-on: ubuntu-22.04
