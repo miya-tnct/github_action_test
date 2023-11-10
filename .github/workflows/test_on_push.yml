@@ -2,7 +2,7 @@ name: Test On Push
 run-name: ${{ github.sha }}
 on: push
 jobs:
-  build:
+  test:
     runs-on: ubuntu-22.04
     steps:
       - run: echo $GITHUB_REF_NAME
