@@ -14,5 +14,5 @@ jobs:
         run: |
           git fetch origin
           git checkout -b $GITHUB_HEAD_REF origin/$GITHUB_HEAD_REF
-          git merge $GITHUB_SHA -m "Merge $GITHUB_BASE_REF branch into $GITHUB_HEAD_REF by GitHub Actions"
+          git merge --allow-unrelated-histories $GITHUB_SHA -m "Merge $GITHUB_BASE_REF branch into $GITHUB_HEAD_REF by GitHub Actions"
           git push origin $GITHUB_HEAD_REF
