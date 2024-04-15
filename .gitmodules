@@ -1,0 +1,3 @@
+[submodule ".github"]
+	path = .github
+	url = https://github.com/miya-tnct/github_actions_for_test.git
