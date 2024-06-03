@@ -5,4 +5,4 @@ jobs:
   github-output:
     runs-on: ubuntu-22.04
     steps:
-      - run: echo hoge >> $GITHUB_OUTPUT
+      - run: echo name=hoge >> $GITHUB_OUTPUT
