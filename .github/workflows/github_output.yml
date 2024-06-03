@@ -1,0 +1,8 @@
+name: GitHUb Output
+run-name: GitHUb Output
+on: push
+jobs:
+  github-output:
+    runs-on: ubuntu-22.04
+    steps:
+      - run: echo hoge >> $GITHUB_OUTPUT
